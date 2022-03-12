@@ -2,12 +2,12 @@
 
 var time = new JupiterTime(8, 40);
 
-void printTime(JupiterTime time)
+void PrintTime(JupiterTime time)
 {
     Console.WriteLine($"It is {time.Hours:00}: {time.Minutes:00} ");
 }
 
-printTime(time);
+PrintTime(time);
 
 public class JupiterTime
 {
@@ -48,9 +48,6 @@ public class JupiterTime
         {
             if (value > 60) throw new Exception("invalid value ");
             _minutes = value;
-
         }
     }
-
-
 }
