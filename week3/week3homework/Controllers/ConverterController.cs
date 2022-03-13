@@ -12,4 +12,11 @@ public class ConverterController : ControllerBase
     {
         _logger = logger;
     }
+
+    [HttpGet("GallonsToLiters")]
+    public double GallonsToLiters(int gallons)
+    {
+        return gallons * 3.785412;
+        //formula on the homework page should be corrected
+    }
 }
