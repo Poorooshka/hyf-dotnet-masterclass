@@ -19,4 +19,9 @@ public class ConverterController : ControllerBase
         return gallons * 3.785412;
         //formula on the homework page should be corrected
     }
+    [HttpGet("ConvertMiles")]
+    public Distance ConvertMiles(int miles)
+    {
+        return new Distance() { Miles = miles, Kilometers = miles * 1.609 };
+    }
 }
