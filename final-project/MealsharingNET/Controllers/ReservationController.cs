@@ -4,7 +4,7 @@ using mealsharingNET.Services;
 namespace mealsharingNET.Controllers;
 
 [ApiController]
-[Route("reservations")]
+[Route("api/reservations")]
 public class ReservationsController : ControllerBase
 {
     private IReservationRepository _repo;
@@ -14,19 +14,19 @@ public class ReservationsController : ControllerBase
         _repo = repo;
     }
 
-    [HttpGet("List")]
+    [HttpGet("")]
     public async Task<List<Reservations>> ListAllReservations()
     {
         return await _repo.ListReservations();
     }
 
-    [HttpPost("Add")]
+    [HttpPost("")]
     public async Task AddReservation([FromBody] Reservations r)
     {
         await _repo.AddReservation(r);
     }
 
-    [HttpGet("FindReservationByMealId")]
+    [HttpGet("{id}")]
     public async Task<IEnumerable<Reservations>> FindReservationByMealId(int id)
     {
         return await _repo.FindReservationByMealId(id);
