@@ -12,17 +12,16 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
-      
+
       - uses: actions/setup-node@v3
-  with:
-  node-version: 14
-- run: npm install
-  working-directory: final/MealsharingNet/ClientApp
-- run: npm run build
-  working-directory: final/MealsharingNet/ClientApp
+        with:
+          node-version: 14
+      - run: npm install
+        working-directory: final-project/MealsharingNET/ClientApp
+      - run: npm run build
+        working-directory: final-project/MealsharingNET/ClientApp
 
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v1
